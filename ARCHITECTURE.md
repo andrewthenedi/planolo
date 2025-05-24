@@ -217,6 +217,12 @@ sequenceDiagram
     DB->>Trace: Async audit trail
 ```
 
+### UX Summary
+
+Planolo delivers instant financial clarity through an interactive drag-drop timeline, real-time projections, and AI-powered explanations in plain language. The experience prioritizes 60-second time-to-insight with progressive disclosure, supporting both conversational chat and structured inputs. Privacy-first design enables local-only mode while maintaining full functionality offline.
+
+➡ **Detailed design specifications: [UI_GUIDE.md](./UI_GUIDE.md)**
+
 ## 4. Tech Stack Rationale
 
 | Layer | Framework | Why it beats alternatives | Performance Impact |
@@ -274,6 +280,13 @@ planolo/
 ├── frontend/
 │   ├── src/
 │   │   ├── components/       # React components (atoms → organisms)
+│   │   │   ├── layout/       # AppShell, NavigationBar, SidePanel, BottomSheet
+│   │   │   ├── canvas/       # Timeline, EventCard, ScenarioCanvas
+│   │   │   ├── charts/       # ProjectionChart, NetWorthChart, StressGauge
+│   │   │   ├── inputs/       # MoneyInput, AgeSlider, PercentageInput
+│   │   │   ├── ai/           # ChatInterface, ExplainButton, NarrativePanel
+│   │   │   ├── feedback/     # EmptyState, LoadingSpinner, ToastNotification
+│   │   │   └── privacy/      # PrivacyToggle, DataDeleteButton, OfflineBanner
 │   │   ├── features/         # Feature-based modules
 │   │   ├── hooks/            # Custom React hooks
 │   │   ├── stores/           # Zustand store slices
